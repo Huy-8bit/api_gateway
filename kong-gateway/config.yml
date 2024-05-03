@@ -1,0 +1,17 @@
+_format_version: "3.0"
+services:
+  - name: grpc-service
+    protocol: grpc
+    host: localhost
+    port: 9000
+    routes:
+      - name: grpc-route
+        protocols:
+          - http
+        paths:
+          - /
+        plugins:
+          - name: grpc-gateway
+            config:
+              proto: path/to/your/hello-gateway.proto
+
